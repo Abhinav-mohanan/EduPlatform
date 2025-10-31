@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate()
   return (
     <header className="sticky top-0 z-50 w-full border-b border-solid border-[#e7ebf3] bg-[#f6f6f8]/80 backdrop-blur-sm">
       <div className="mx-auto flex max-w-[960px] items-center justify-between whitespace-nowrap px-4 py-3">
@@ -26,10 +28,14 @@ const Header = () => {
           </a>
         </nav>
         <div className="flex gap-2">
-          <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7ebf3] text-[#0d121b] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0f49bd]/10 transition-colors">
+          <button
+          onClick={()=>navigate('role-selection')}
+           className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7ebf3] text-[#0d121b] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0f49bd]/10 transition-colors">
             <span className="truncate">Log In</span>
           </button>
-          <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0f49bd] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity">
+          <button
+          onClick={()=>navigate('role-selection')} 
+          className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0f49bd] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity">
             <span className="truncate">Sign Up</span>
           </button>
         </div>
