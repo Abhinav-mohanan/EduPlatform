@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { School, LayoutDashboard, BookOpen, Compass, Calendar, Settings, LogOut, Search, ChevronDown, Bookmark, FileText, PlayCircle, Music, ChevronUp } from 'lucide-react';
+import { ChevronDown, FileText, PlayCircle, Music, ChevronUp } from 'lucide-react';
 
 const TopicAccordion = ({ topic, isExpanded, onToggle }) => {
   return (

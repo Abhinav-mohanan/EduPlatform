@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { School, LayoutDashboard, BookOpen, Compass, Calendar, Settings, LogOut, Search, ChevronDown, Bookmark, FileText, PlayCircle, Music, ChevronUp } from 'lucide-react';
+import { Bookmark } from 'lucide-react';
 
 const CourseCard = ({ course }) => {
   const [isBookmarked, setIsBookmarked] = useState(course.bookmarked);

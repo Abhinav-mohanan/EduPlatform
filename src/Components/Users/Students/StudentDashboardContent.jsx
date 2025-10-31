@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { School, LayoutDashboard, BookOpen, Compass, Calendar, Settings, LogOut, Search, ChevronDown, Bookmark, FileText, PlayCircle, Music, ChevronUp } from 'lucide-react';
+import {Search, ChevronDown } from 'lucide-react';
 import TopicAccordion from './TopicAccordion';
 import CourseCard from './CourseCard';
 
@@ -59,7 +59,6 @@ const StudentDashboardContent = () => {
   
   return (
     <div className="w-full max-w-7xl mx-auto">
-      {/* Header: Search and Filters */}
       <header className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
         <div className="w-full md:max-w-md">
           <div className="flex flex-col min-w-40 h-12 w-full">
@@ -77,19 +76,8 @@ const StudentDashboardContent = () => {
           </div>
         </div>
         
-        <div className="flex gap-3 overflow-x-auto">
-          <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#1A2233] shadow-sm pl-4 pr-3 hover:bg-gray-50 dark:hover:bg-white/5">
-            <p className="text-sm font-medium">Filter by Course</p>
-            <ChevronDown size={20} />
-          </button>
-          <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#1A2233] shadow-sm pl-4 pr-3 hover:bg-gray-50 dark:hover:bg-white/5">
-            <p className="text-sm font-medium">Filter by Topic</p>
-            <ChevronDown size={20} />
-          </button>
-        </div>
       </header>
       
-      {/* Breadcrumbs */}
       <nav className="flex flex-wrap gap-2 py-4">
         <a className="text-[#4C669A] dark:text-[#9CA3AF] text-sm font-medium leading-normal hover:text-[#0A2463]" href="#">
           My Courses
@@ -107,14 +95,12 @@ const StudentDashboardContent = () => {
         Continue Learning
       </h1>
       
-      {/* Course Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map(course => (
           <CourseCard key={course.id} course={course} />
         ))}
       </div>
       
-      {/* Course Detail Section */}
       <div className="mt-12">
         <h2 className="text-[#0D121B] dark:text-[#E5E7EB] text-2xl font-bold leading-tight pb-6">
           Course Content: Intro to Psychology

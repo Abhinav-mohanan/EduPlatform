@@ -1,9 +1,7 @@
-
-import React, { useState } from 'react';
-import { School, LayoutDashboard, BookOpen, Compass, Calendar, Settings, LogOut, Search, ChevronDown, Bookmark, FileText, PlayCircle, Music, ChevronUp, Sidebar } from 'lucide-react';
+import React from 'react';
+import { School, LayoutDashboard, BookOpen, Calendar, LogOut } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-// Sidebar Component
 const StudentSidebar = () => {
   const navigate = useNavigate()
   return (
@@ -12,7 +10,7 @@ const StudentSidebar = () => {
         <div className="p-2 bg-[#0A2463] rounded-lg">
           <School className="text-white" size={24} />
         </div>
-        <h1 className="text-xl font-bold text-[#0A2463] dark:text-white">EduPortal</h1>
+        <h1 className="text-xl font-bold text-[#0A2463] dark:text-white">EduPlatform</h1>
       </div>
       
       <div className="flex flex-col gap-4 mb-auto">
@@ -37,10 +35,6 @@ const StudentSidebar = () => {
             <p className="text-sm font-medium">My Courses</p>
           </a>
           <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#0A2463]/5 dark:hover:bg-white/10" href="#">
-            <Compass className="text-[#0D121B] dark:text-[#E5E7EB]" size={24} />
-            <p className="text-sm font-medium">Browse All</p>
-          </a>
-          <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#0A2463]/5 dark:hover:bg-white/10" href="#">
             <Calendar className="text-[#0D121B] dark:text-[#E5E7EB]" size={24} />
             <p className="text-sm font-medium">Calendar</p>
           </a>
@@ -48,10 +42,6 @@ const StudentSidebar = () => {
       </div>
       
       <div className="flex flex-col gap-2">
-        <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#0A2463]/5 dark:hover:bg-white/10" href="#">
-          <Settings className="text-[#0D121B] dark:text-[#E5E7EB]" size={24} />
-          <p className="text-sm font-medium">Settings</p>
-        </a>
         <a
         onClick={()=>navigate('/role-selection')}
          className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#0A2463]/5 dark:hover:bg-white/10" href="#">

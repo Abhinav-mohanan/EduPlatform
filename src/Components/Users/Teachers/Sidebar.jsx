@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { School, LayoutDashboard, BookOpen, Calendar, MessageSquare, Settings, LogOut, Plus, Search, Edit, Trash2, Eye, Video, FileAudio } from 'lucide-react';
+import React from 'react';
+import { School, LayoutDashboard, BookOpen, Calendar, MessageSquare, LogOut } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-// Sidebar Component
 const Sidebar = () => {
   const navigate = useNavigate()
   return (
@@ -10,7 +9,7 @@ const Sidebar = () => {
       <div className="flex flex-col gap-8">
         <div className="flex items-center gap-2">
           <School className="text-[#0f49bd] text-3xl" size={32} />
-          <h2 className="text-xl font-bold text-slate-800 dark:text-white">EduPortal</h2>
+          <h2 className="text-xl font-bold text-slate-800 dark:text-white">EduPlatform</h2>
         </div>
         
         <div className="flex flex-col gap-4">
@@ -47,10 +46,6 @@ const Sidebar = () => {
       </div>
       
       <div className="flex flex-col gap-1">
-        <a className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
-          <Settings size={20} className="text-slate-500 dark:text-slate-400" />
-          <p className="text-sm font-medium leading-normal">Settings</p>
-        </a>
         <a
         onClick={()=>navigate('/role-selection')}
          className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">

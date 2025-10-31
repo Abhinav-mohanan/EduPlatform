@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { School,  BookOpen, Calendar, MessageSquare, Settings, LogOut, Plus, Search, Edit, Trash2, Eye, Video, FileAudio } from 'lucide-react';
+import { Plus, Search, Edit, Trash2, Eye, Video, FileAudio } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
-// Dashboard Content Component
 const DashboardContent = () => {
+  const navigate = useNavigate()
   const [searchQuery, setSearchQuery] = useState('');
   
   const courses = [
@@ -68,7 +69,6 @@ const DashboardContent = () => {
   
   return (
     <div className="w-full max-w-7xl mx-auto">
-      {/* Page Heading */}
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex flex-col gap-1">
           <p className="text-slate-900 dark:text-white text-3xl font-bold leading-tight">My Courses</p>
@@ -76,13 +76,14 @@ const DashboardContent = () => {
             Manage and upload educational materials for your courses.
           </p>
         </div>
-        <button className="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-[#0f49bd] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0f49bd]/90 transition-colors">
+        <button
+        onClick={()=>navigate('/upload-file')}
+         className="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-[#0f49bd] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0f49bd]/90 transition-colors">
           <Plus size={16} />
           <span className="truncate">Add New Course</span>
         </button>
       </div>
       
-      {/* Search and Breadcrumbs */}
       <div className="flex flex-wrap items-center justify-between gap-4 mt-8">
         <div className="flex flex-wrap items-center gap-2">
           <a className="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal hover:text-[#0f49bd]" href="#">
@@ -109,7 +110,6 @@ const DashboardContent = () => {
         </div>
       </div>
       
-      {/* Courses Grid */}
       <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 mt-8">
         {courses.map(course => (
           <div key={course.id} className="flex flex-col gap-3 pb-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
@@ -130,7 +130,6 @@ const DashboardContent = () => {
         ))}
       </div>
       
-      {/* Recent Uploads Section */}
       <div className="mt-12">
         <div className="flex items-center justify-between">
           <h3 className="text-xl font-bold text-slate-900 dark:text-white">Recent Uploads</h3>
