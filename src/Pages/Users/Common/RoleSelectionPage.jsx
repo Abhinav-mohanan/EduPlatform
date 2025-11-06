@@ -9,10 +9,11 @@ const RoleSelectionPage = () => {
 
   const handleRoleSelect = (role) => {
     setSelectedRole(role);
+    localStorage.setItem('role',role)
     setIsAnimating(true);
     
     setTimeout(() => {
-      navigate(`/${role}-dashboard`)
+      navigate(`/login`,{state:{role}})
     }, 800);
   };
 

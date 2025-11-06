@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
   const navigate = useNavigate()
+  const handleLogout = () =>{
+    navigate('/')
+    localStorage.removeItem('role')
+  }
   return (
     <div className="fixed top-0 left-0 flex h-full min-h-screen w-64 flex-col justify-between border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
       <div className="flex flex-col gap-8">
@@ -47,7 +51,7 @@ const Sidebar = () => {
       
       <div className="flex flex-col gap-1">
         <a
-        onClick={()=>navigate('/role-selection')}
+        onClick={handleLogout}
          className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
           <LogOut size={20} className="text-slate-500 dark:text-slate-400" />
           <p className="text-sm font-medium leading-normal">Logout</p>
